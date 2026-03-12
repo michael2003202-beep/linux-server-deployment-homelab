@@ -1,12 +1,17 @@
-MacBook (Host Machine)
-│
-├─ SSH  → localhost:2222
-├─ HTTP → localhost:8080
-│
-└─ VirtualBox NAT Network
-    │
-    └─ Ubuntu Server VM
+```bash
+Host Machine (MacBook)
         │
-        ├─ NGINX Web Server (Port 80)
+        │
+        ▼
+VirtualBox NAT Network
+        │
+        │  localhost:2222 → SSH
+        │  localhost:8080 → HTTP
+        │
+        ▼
+Ubuntu Server VM
+        │
+        ├─ NGINX Web Server
         │
         └─ MySQL Database
+```
