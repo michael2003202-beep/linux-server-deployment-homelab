@@ -35,12 +35,12 @@ Ubuntu Server VM
 
 # Virtual Machine Setup:
 - VM was created using VirtualBox
-Configuration:
-- Memory: 4096 MB
-- CPU: 2 cores
-- Disk: 25 GB
-- Network: NAT
-- Ubuntu Server 24.04 LTS was installed using ISO installer.
+- Configuration:
+    - Memory: 4096 MB
+    - CPU: 2 cores
+    - Disk: 25 GB
+    - Network: NAT
+    - Ubuntu Server 24.04 LTS was installed using ISO installer.
 
 # Networking Configuration:
 - VM network adapter was configuring using NAT networking.
@@ -60,37 +60,53 @@ Configuration:
 
 # Verifying Network Configuation:
 - After installation the networking configuration should be verified:
+    ```bash
     ip a
+    ```
 - VM receives IP address from VirtualBox NAT which confirms VM has internet connectivity
 
 - Following Installation system is updated:
+    ```bash
     sudo apt update
     sudo apt upgrade -y
-
+    ```
 # NGINX installation:
 - Web Server installed using package manager:
+    ```bash
     sudo apt install nginx
+    ```
 - Verify service status:
+    ```bash
     sudo systemctl status nginx
-
+    ```
 # Configure Firewall:
 - Ubuntu uses UFW (Uncomplicated Firewall)
 - Enable firewall:
+    ```bash
     sudo ufw enable
+    ```
 - Allow HTTP traffic:
+    ```bash
     sudo ufw allow 80
+    ```
 - Verify firewall rules:
+    ```bash
     sudo ufw status
-
+    ```
 # Install Database Server:
 - MySQL databse server installation:
+    ```bash
     sudo apt install mysql-server
+    ```
 - Verify database service:
+    ```bash
     sudo systemctl status mysql
-
+    ```
 # Secure MySQL Installation:
 - Run MySQL security configuration script:
+    ```bash
     sudo mysql_secure_installation
+    ```
 - Options selected:
     Remove anonymous users: YES
     Disallow root login remotely: YES
@@ -99,13 +115,21 @@ Configuration:
 
 # Create Database:
 - Access the MySQL shell:
+    ```bash
     sudo mysql
+    ```
 - Create a database:
+    ```bash
     CREATE DATABASE project1db;
+    ```
 - Verify database creation:
+    ```bash
     SHOW DATABASES;
+    ```
 - Exit MySQL:
+    ```bash
     exit
+    ```
 
 # Configure VirtualBox Port Forwarding:
 - Since VirtualBox NAT networking does not allow direct access to the VM IP address from the host, port forwarding was configured.
@@ -122,18 +146,24 @@ Configuration:
         - Guest Port: 80
 # Testing Web Server:
 - Inside VM:
+    ```bash
     curl localhost
+    ```
 - From host machine:
     http://localhost:8080
 # Testing SSH Access;
 - SSH access test from host machine
+    ```bash
     ss user.name@localhost -p 2222
+    ```
 - Sucessful login confirms remote admin is working
 
 # Service verification:
+    ```bash
     sudo systemctl status nginx
     sudo systemctl status mysql
     sudo systemctl status ssh
+    ```
 
 # Troubleshooting:
 - Unable to Access VM from Host
