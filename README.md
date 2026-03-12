@@ -108,10 +108,10 @@ Ubuntu Server VM
     sudo mysql_secure_installation
     ```
 - Options selected:
-    Remove anonymous users: YES
-    Disallow root login remotely: YES
-    Remove test database: YES
-    Reload privilege table; YES
+    - Remove anonymous users: YES
+    - Disallow root login remotely: YES
+    - Remove test database: YES
+    - Reload privilege table; YES
 
 # Create Database:
 - Access the MySQL shell:
@@ -136,12 +136,12 @@ Ubuntu Server VM
 - VirtualBox Network Configuration:
     Adapter: NAT
 - Port Forwarding Rules
-    SSH
+    - SSH
         - Host IP: 127.0.0.1
         - Host Port: 2222
         - Guest IP: 10.0.2.15
         - Guest Port: 22
-    HTTP
+    - HTTP
         - Host Port: 8080
         - Guest Port: 80
 # Testing Web Server:
@@ -169,5 +169,5 @@ Ubuntu Server VM
 - Unable to Access VM from Host
     - Cause: VirtualBox NAT Networking prevents direct access to VM internal IP addresses.
     - Solution: Configure NAT port forwarding rules:
-        SSH: localhost: 2222 -> VM port 22
-        HTTP: localhost: 8080 -> VM port 80
+        - SSH: localhost: 2222 -> VM port 22
+        - HTTP: localhost: 8080 -> VM port 80
