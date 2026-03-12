@@ -6,7 +6,7 @@ with the goals of building a foundation for server deployment, networking, and s
 
 - The goal of this project is to simulate a small infrastructure environment and practice system administration tasks such as service management, networking, and server configuration.
 
-# Environemnt:
+# Environment:
 - Host Machine
 $\cdot$ macOS
 $\cdot$ Intel i7 MacBook Pro
@@ -20,18 +20,6 @@ $\cdot$ Ubuntu Server
 # Services:
 $\cdot$ NGINX
 $\cdot$ MySQL
-
-# Architecture:
-MacBook
-   │
-   ├─ SSH → localhost:2222
-   └─ HTTP → localhost:8080
-        │
-VirtualBox NAT Port Forwarding
-        │
-Ubuntu Server VM
-   ├─ NGINX Web Server
-   └─ MySQL Database
 
 # Virtual Machine Setup:
 - VM was created using VirtualBox
